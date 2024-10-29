@@ -2,6 +2,7 @@
 #define PLAYNOTE_H
 #include "Arduino.h"
 /*
+tempo default = 100
   Xu ly cac dang dau vao nhu sau:
     Tab Kalimba:
       1) "1", "2", "3", "4", "5", "6", "7"
@@ -14,7 +15,7 @@
       2) "Cb"
       3) "C5", "C#5"
 
-  
+ Quarter note = 25600/tempo 
  l = 256 = Quarter note
  t = do dai not = l * 2^k = length of note (value is cal when l = 128)
  64 = not tron tu = l * 2^5 = 4096 ms = Large (Latin: Maxima) / Octuple whole note
@@ -34,11 +35,13 @@
 class PlayNote{
 	private:
 		uint8_t buzzerPin;
+		int lengthQuarterNote = 256;
 		bool isPrint = true;
 	public:
 		PlayNote();
 		void setPrint(bool);
 		void setBuzzerPin(int);
+		void setTempo(int);
 		char* toUppercase(char *, int);
 		int diff(const char *);
 		float ffreq(const char *);

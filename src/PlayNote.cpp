@@ -233,7 +233,10 @@ int PlayNote::freq(const char *x)
 
 ////////////////////////////////////////////////////////////////////
 
-
+void PlayNote::setTempo(int tempo)
+{
+	lengthQuarterNote = 256*100/tempo;	
+}
 
 void PlayNote::play(int f)
 {
@@ -253,7 +256,7 @@ void PlayNote::play(int f)
 void PlayNote::playTime(struct notes n)
 {
   int f = freq(n.name);
-  int lengthQuarterNote = 256;//ms; temp = 60/lenQuarterNote // lengthQuarterNote (ms) = Quarter note = l
+  // int lengthQuarterNote = 256;//ms; temp = 60/lenQuarterNote // lengthQuarterNote (ms) = Quarter note = l
   long t = round(n.length * lengthQuarterNote); //dat gia tri tuong duong voi not den
   if(isPrint)
   	Serial.printf("Frequency: %d, Len: %d\n", f, t);
@@ -279,8 +282,9 @@ void PlayNote::playTime(struct notes n)
   {
     noTone(buzzerPin);
   }
-//  delay(t);
+  //delay(t);
   delay(t + round(t * 0.5));
+  //noTone(buzzerPin);	
 }
 
 void PlayNote::playSong(struct notes songFromUser[], int len)

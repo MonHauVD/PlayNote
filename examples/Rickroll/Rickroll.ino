@@ -34,6 +34,7 @@ int len = sizeof(song)/sizeof(PlayNote::notes);
 
 void setup() {
   Serial.begin(115200);
+  playnote.setTempo(150);
   playnote.setBuzzerPin(13);
   // playnote.setPrint(false);
   playnote.play(784); // plat a exactly Hz
