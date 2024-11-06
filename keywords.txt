@@ -2,9 +2,6 @@ PlayNote	KEYWORD1
 setPrint	KEYWORD2
 setBuzzerPin	KEYWORD2
 toUppercase	KEYWORD2
-diff	KEYWORD2
-ffreq	KEYWORD2
-freq	KEYWORD2
 notes	KEYWORD3
 play	KEYWORD2
 playTime	KEYWORD2

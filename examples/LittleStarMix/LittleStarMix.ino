@@ -14,7 +14,7 @@ void setup() {
   Serial.begin(115200);
   playnote.setBuzzerPin(13);
   // playnote.setPrint(false);
-  playnote.play(784); // plat a exactly Hz
+  playnote.play(784); // play a exactly Hz
   playnote.play(880);
   playnote.play(988);
   playnote.play(1047);
